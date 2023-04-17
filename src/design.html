@@ -1,0 +1,203 @@
+
+<html>
+  <head>
+    <title>Design</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv=”Pragma” content=”no-cache”>
+    <meta http-equiv=”Expires” content=”-1″>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> 
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">	
+  </head>
+  <body>
+      <div class="page pt-4">
+        <div class="header pl-5">
+          <!-- LOGO -->
+          <div id="logo" class="mb-2">
+            <a href="#" class="logo">Bergtouren & Wanderungen</a>
+          </div>
+          <!-- NAVIGATION -->
+          <nav class="mb-5">
+            <a href="#">HOME</a>
+            <a href="#">ÜBERSICHT</a>
+            <a href="#">SUCHE</a>
+          </nav>
+        </div>
+        <!-- CONTENT AREA -->
+        <!-- Tourlist Filter -->
+        <div class="pl-4 mt-6 mb-5">
+          <ul class="hnx-tabnav">
+              <li class="tab"><a href="#" @click="filterTourlist(tourlist)">Gesamt</a>
+              </li>
+              <li class="tab active">
+                <a href="#news" @click="openTabnavDropdown(1)">Jahr
+                  <span class="caret"></span>
+                </a>
+                  <ul class="dropdown xxopen" v-bind:class="{'open': activeDropdown === 1}">
+                      <li><a href="#" @click="filterTourlist(tourlist, 'jahr','2021')">2021</a></li>
+                      <li><a href="#" @click="filterTourlist(tourlist, 'jahr','2016')">2016</a></li>
+                      <li><a href="#" @click="filterTourlist(tourlist, 'jahr','2015')">2015</a></li>
+                  </ul>
+              </li>
+              <li class="tab">
+                <a href="#contact" @click="openTabnavDropdown(2)">Land
+                    <span class="caret"></span>
+                </a>
+                  <ul class="dropdown" v-bind:class="{'open': activeDropdown === 2}">
+                      <li><a href="#" @click="filterTourlist(tourlist, 'land','Deutschland')">Deutschland</a></li>
+                      <li>Schweiz</li>
+                      <li><a href="#" @click="filterTourlist(tourlist, 'land','Italien')">Italien</a></li>
+                      <li><a href="#" @click="filterTourlist(tourlist, 'land','Spanien')">Spanien</a></li>
+                  </ul>
+              </li>
+              <li class="tab"><a href="#contact" @click="openTabnavDropdown(3)">Kategorie
+                <span class="caret"></span>
+              </a>
+                  <ul class="dropdown" v-bind:class="{'open': activeDropdown === 3}">
+                      <li><a href="#" @click="filterTourlist(tourlist, 'category','Winterwanderung')">Winterwanderung</a></li>
+                  </ul>
+              </li>
+          </ul>    
+      </div>
+
+      <div class="col-center mb-3"><span class="list-category">Spanien</span></div>
+        <!-- Tourlist Page: Pagination  -->
+              <div class="pagenav pl-5 pr-5 mb-5">
+                <div class="col col-left"><a href="#">ZURÜCK</a></div>
+                <div class="col col-center">11 - 20 / 165</div>
+                <div class="col col-right"><a href="#">WEITER</a></div>
+              </div>
+              <article>
+
+        <!-- Detail Page: Page Nav -->
+        <div class="pagenav font-bigger pl-5 pr-5 mb-5">
+          <div class="col col-right"><a href="#">>></a></div>
+          <div class="col col-left"><a href="#">>></a></div>
+        </div>
+        <article>
+          <!-- Detail Page: Article Head-->
+          <div class="article-head pl-5 mb-4">
+            <div class="subheadline">27.09.2021 | Schweiz - Wallis - Zermatt</div>
+            <h1>5-Seen-Weg bei Zermatt</h1>
+            <p>Schneeschuh-Traumtour in der Urner Bergwelt</p> 
+          </div>
+        <!-- Main Image -->
+        <div class="mb-5" id="imgcon"></div>
+        <!-- Tour Info -->
+        <section class="pl-5 pr-5 mb-5 pl-extra-dtp pr-extra-dtp">
+          <table>
+            <tbody>
+             <tr>
+                <td>Datum</td>
+                <td>31.10.2021</td>
+             </tr>
+             <tr>
+                <td>Höhe</td>
+                <td>1453 m</td>
+             </tr>
+             <tr>
+                <td>Dauer</td>
+                <td>5:00 Std</td>
+             </tr>
+             <tr>
+                <td>Höhendifferenz</td>
+                <td>1000 m ↑  1000 m ↓</span></td>
+             </tr>
+             <tr>
+                <td>Distanz</td>
+                <td>14,0 km</td>
+             </tr>				
+            </tbody>
+           </table>
+        </section>
+        <!-- Artikel Main -->
+          <section class="article-main pl-5 pr-5 mb-6 pl-extra-dtp pr-extra-dtp">
+            <p>Da wir den Mark Twain Weg schon öfters gegangen sind, verzichten wir an dieser Stelle auf einen weiteren Bericht. Für ältere Berichte sei hier auf den Abschnitt "siehe auch" am Ende der Seite verwiesen.
+            </p>
+            <p>Noch erwähnenswert ist auf jeden Fall die tolle Herbststimmung, bei der die Berge und der Vierwaldstättersee besonders malerisch zur Geltung kamen. In Erinnerung wird uns außerdem der "freche" Esel bleiben, der Kirstens Jacke offensichtlich mit Grünfutter verwechselte. Und nicht zuletzt das schmackhafte Rigi-Picknick mit selbst gebackenem Sauerteigbrot und köstlichem Alpkäse.
+            </p>
+          </section>
+          <!-- Bilder -->
+          <section class="pl-5 pr-5 mb-5">
+            <h2 class="mb-3">Fotos</h2>
+            <div class="gallery">
+              <a href="#"><img src="http://wandern.hanx.de/contents/fotos/2022/20220123/01.jpg" alt=""></a>
+              <a href="#"><img src="http://wandern.hanx.de/contents/fotos/2022/20220123/02.jpg" alt=""></a>
+              <a href="#"><img src="http://wandern.hanx.de/contents/fotos/2022/20220123/03.jpg" alt=""></a>
+              <a href="#"><img src="http://wandern.hanx.de/contents/fotos/2022/20220123/04.jpg" alt=""></a>
+              <a href="#"><img src="http://wandern.hanx.de/contents/fotos/2022/20220123/05.jpg" alt=""></a>
+              <a href="#"><img src="http://wandern.hanx.de/contents/fotos/2022/20220123/06.jpg" alt=""></a>
+              <a href="#"><img src="http://wandern.hanx.de/contents/fotos/2022/20220123/07.jpg" alt=""></a>
+              <a href="#"><img src="http://wandern.hanx.de/contents/fotos/2022/20220123/08.jpg" alt=""></a>
+    
+    
+    
+            </div>
+          </section>
+        </article>
+
+
+        <!-- Opener -->
+        <div class="opener mb-6">
+          <div class="subheadline"><span class="country-region">16.01.2022 | Uri</span></div>
+          <a href="detail_page.html">
+            <h1>5-Seen-Weg bei Zermatt</h1>
+          </a>
+          <p>Schneeschuh-Traumtour in der Urner Bergwelt</p> 
+        </div>
+        <!-- More Items -->
+        <div class="pagenav pl-5 mb-4">Frühere Touren</div>
+        
+          <div class="child-temp" id="app"></div>
+          <!-- Liste (für related Tours nachfolgender SECTION class box-related-tours hinzufügen)-->
+          <section>
+            <h2 class="pl-5 pb-3">Siehe auch</h2>
+          <ul class="box-related-tours ml-5 mr-5 pl-5 pt-5 pb-1">
+            <li>
+              <!-- List Item -->
+              <div class="list-item mb-6">
+                <div class="list-item-image mr-6">
+                  <a href="detail_page.html" id="teaser-01">
+                  </a>  
+                </div>
+                <div class="list-item-text">
+                  <div class="subheadline">16.01.2022 | Uri</div>
+                  <a href="detail_page.html">
+                    <h2>Turren-Schönbüel Trail</h2>
+                  </a>
+                  <p>Schneeschuh-Traumtour in der Urner Bergwelt</p>  
+                </div>
+              </div>
+              <!-- End List Item -->
+            </li>
+            <li>
+              <!-- List Item -->
+              <div class="list-item mb-6">
+                <div class="list-item-image mr-6">
+                  <a href="detail_page.html" id="teaser-02">
+                  </a>  
+                </div>
+                <div class="list-item-text">
+                  <div class="subheadline"><span class="country-region">16.01.2022 | Uri</span></div>
+                  <a href="detail_page.html">
+                    <h2>Von Eggberge zum Ganderegg</h2>
+                  </a>
+                  <p>Schneeschuh-Traumtour in der Urner Bergwelt</p>  
+                </div>
+              </div>
+              <!-- End List Item --> 
+            </li>
+          </ul>  
+          </section> 
+        
+        <!-- More Items -->
+        <div class="pagenav pl-5 mb-4"><a href="#">Alle Touren</a></div>
+        <!-- Go Top Navigation -->
+        <div class="navgotop mr-4 mb-6">
+          <a href="#" >Nach oben</a>
+        </div>
+      </div>
+  </body>
+</html>

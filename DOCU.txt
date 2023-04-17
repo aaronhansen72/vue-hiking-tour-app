@@ -1,0 +1,29 @@
+
+
+
+## Live-Deployment
+
+Problem Live-Server-Deployment und Vue Router (Web History-Mode): "...without a proper server configuration, the users will get a 404 error if they access https://example.com/user/id directly in their browser."
+Deswegen muss beim Deploy auf Hosting Server (IONOS) in den Root eine .htaccess
+mit folgendem Inhalt
+```
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+```
+* https://stackoverflow.com/questions/48752650/deploying-vue-js-app-and-getting-404-error-in-routes
+
+##  Offenes
+
+### API Data Sharing zwischen Components?
+* VueJS - Reusable Data Fetcher Component
+  * https://dev.to/vcpablo/vuejs-reusable-data-fetcher-component-1jdo
+  * Slots? https://vuejs.org/guide/components/slots.html
+* Techniques for Sharing Data between Vue.js Components
+  * https://vueschool.io/articles/vuejs-tutorials/techniques-for-sharing-data-between-vue-js-components/
+  * Props, Emits, Slots, Stores (Pinia, Vuex), Provice/Inject
