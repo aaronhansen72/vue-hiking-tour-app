@@ -12,7 +12,7 @@
     <!-- Tour Data Summary -->
     <div v-if="tour">
         <!-- Detail Page: Article Head-->
-         <div class="article-head pl-5 mb-4">
+         <div class="article-head pl-5 pr-5 mb-4">
             <div class="subheadline">{{ formatedDate(tour.id) }} | {{ tour.land }} - {{ tour.gebiet }}</div>
             <h1>{{ tour.titel }}</h1>
             <p>{{ tour.untertitel }}</p> 
