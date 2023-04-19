@@ -2,10 +2,10 @@
     <article>
     <!-- Page Navigation -->
     <div class="pagenav font-bigger pl-5 pr-5 mb-5">
-        <div v-if="showButtonPrevPage" class="col col-right">
+        <div v-if="showButtonPrevPage" class="col col-right-big">
             <a href="#" @click.stop="linkToRoute(previousPage)">&lt;&lt;</a>
         </div>
-        <div v-if="showButtonNextPage" class="col col-left">
+        <div v-if="showButtonNextPage" class="col col-left-big">
             <a href="#" @click.stop="linkToRoute(nextPage)">&gt;&gt;</a>
         </div>
     </div>
@@ -18,11 +18,13 @@
             <p>{{ tour.untertitel }}</p> 
         </div>
         <!-- Main Image -->
-        <a href="#image_gallery" >
-            <img :src="getImagePath(tour.id, tour.hauptbild)" class="main-image">
-        </a>
+        <div class="main-image-stage">
+            <a href="#image_gallery" >
+                <img :src="getImagePath(tour.id, tour.hauptbild)" class="main-image">
+            </a>
+        </div>
         <!-- Tour Info -->
-        <section class="pl-5 pr-5 mt-5 mb-5 pl-extra-dtp pr-extra-dtp">
+        <section class="pl-5 pr-5 mt-5 mb-5 mt-dtp mb-dtp">
           <table>
             <tbody>
              <tr>
@@ -51,13 +53,13 @@
     </div>
 
     <!-- Page Content -->
-    <section v-html="pageContent" class="article-main pl-5 pr-5 mb-6 pl-extra-dtp pr-extra-dtp">
+    <section v-html="pageContent" class="article-main pl-5 pr-5 mb-6 pl-extra-dtp pr-extra-dtp mb-dtp">
     </section>
 
     <!-- Images as Vanilla JS FsLightbox with data-fslightbox attribute -->
     <section class="pl-5 pr-5 mb-5" id="image_gallery">
         <h2 class="mb-3">Fotos ({{ tour.bildanzahl  }})</h2>
-        <div class="gallery">
+        <div class="gallery mt-5">
             <template v-for="tourImage in tourImages" :key="tourImage.id">
                 <a data-fslightbox="tour-lightbox" :href="tourImage" exitFullscreenOnClose>
                     <img :src="tourImage" >
@@ -126,8 +128,8 @@ export default {
             console.log("baseUrl: ", this.baseUrl)
             if (process.env.NODE_ENV === "development") {
                 this.baseUrl = "http://localhost:8080/"
-                //this.contentBaseUrl = "http://localhost:8080/"
-                this.contentBaseUrl = "http://wandern.hanx.de/"
+                this.contentBaseUrl = "http://localhost:8080/"
+                //this.contentBaseUrl = "http://wandern.hanx.de/"
             } 
             console.log("baseUrl: ", this.baseUrl)
             console.log("contentBaseUrl: ", this.contentBaseUrl)
@@ -164,7 +166,6 @@ export default {
         },
         async loadPageContent(tourId) {
             try {
-                //this.contentBaseUrl = "http://localhost:8080/";
                 const response = await fetch(this.contentBaseUrl + this.basePathText + this.tourId.substring(0, 4) + "/" + tourId + ".html");
                 if (response.status === 404) {
                     this.pageContent = "sorry folks, no content found."

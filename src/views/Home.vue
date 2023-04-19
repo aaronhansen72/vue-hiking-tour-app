@@ -2,7 +2,7 @@
     <!-- HOME -->
     <!-- Opener -->
     <template v-for="tour in tourlist.slice(0,1)" :key="tour.id" >
-        <div class="mt-5" >
+        <div class="main-image-stage mt-5" >
             <!-- Frontpage Image linked -->
             <router-link :to="{ name: 'tour-page',params: { id: tour.id }}">
                 <img :src="getImagePath(tour.id, tour.hauptbild)" class="main-image">

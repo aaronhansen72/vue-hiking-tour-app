@@ -13,6 +13,8 @@ $spacing-4: 1.0rem;
 $spacing-5: 1.5rem;
 $spacing-6: 2.0rem;
 
+$desktop-page-width: 820px;
+
 /*
 
  Common styles
@@ -151,6 +153,8 @@ Home Page
 
   .list-category {
     font-size: 1.0rem;
+    font-weight: bold;
+    color: #666666;
   }
 
   .list-item {
@@ -181,7 +185,7 @@ Home Page
   }
 
   .list-item-text p {
-    line-height: 1.5rem;
+    line-height: 1.25rem;
   }
 
 /*
@@ -288,6 +292,13 @@ Detail-Page
     margin-bottom: $spacing-3;
 }
 
+
+  .main-image-stage {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
 table {
     width: 100%;
     background: $primary-bg-color;
@@ -311,8 +322,6 @@ table tr:nth-of-type(odd) {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     display:flex;
-    flex-direction: row;
-    justify-content: space-between;
     gap: 5%;
     color: #666;
 }
@@ -331,10 +340,22 @@ table tr:nth-of-type(odd) {
 
 .col-left {
     text-align: left;
+    flex:0 0 25%;
 }
 
 .col-right {
     text-align: right;
+    flex:0 0 25%;
+}
+
+.col-left-big {
+  text-align: left;
+  flex:0 0 50%;
+}
+
+.col-right-big {
+  text-align: right;
+  flex:0 0 50%;
 }
 
 .col-center {
@@ -435,7 +456,7 @@ table tr:nth-of-type(odd) {
 
   
 /* Tablet */
-@media only screen and (min-width: 480px) and (max-width: 768px) {
+@media only screen and (min-width: 480px) and (max-width: $desktop-page-width) {
 
   a.logo:link, a.logo:hover, a.logo:active,  a.logo:visited {
       font-size:2.0rem;	
@@ -448,14 +469,15 @@ table tr:nth-of-type(odd) {
 }
   
 /* Desktop */
-@media only screen and (min-width: 800px) {
+@media only screen and  (min-width: $desktop-page-width) {
 
   body {
-      background: rgb(248, 248, 248)
+      //background: rgb(248, 248, 248)
+      background: rgb(255,255,255);
   }
 
   .page {
-      width: 800px;
+      width: $desktop-page-width;
       background-color: $primary-bg-color;
   }
 
@@ -463,12 +485,51 @@ table tr:nth-of-type(odd) {
       font-size:2.0rem;	
   }  
 
-  .pl-extra-dtp {
-      padding-left: 3rem;
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.25rem;
   }
 
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .article-head .subheadline {
+    font-size: 1.1rem;
+    margin-bottom: 0.40rem;
+    line-height: 2.0rem;
+ }
+
+  .main-image-stage {
+    padding-left: $spacing-5;
+    padding-right: $spacing-5;
+  }
+
+  .article-head p, .article-main p {
+    font-size: 1.2rem;
+    line-height: 2.0rem;
+    margin-bottom: $spacing-3;
+    color: #1c1b1b;
+  }
+
+  table {
+    font-size: 1.1rem;
+  }
+
+  .pl-extra-dtp {
+    padding-left: 3.5rem;
+  }
+  
   .pr-extra-dtp {
-      padding-right: 3rem;
+    padding-right: 3.5rem;
+  }
+
+  .mt-dtp {
+    margin-top: 3rem;
+  }
+  
+  .mb-dtp {
+    margin-bottom: 3rem;
   }
       
 }

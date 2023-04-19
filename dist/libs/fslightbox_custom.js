@@ -17,7 +17,7 @@ function loadFsLightboxCustomStettings()
     fsLightboxInstances["tour-lightbox"].props.onOpen = function () {
         // change CSS of fslightbox-container
         const fsLightboxContainer = document.getElementsByClassName('fslightbox-container');
-        fsLightboxContainer[0].style.background = 'linear-gradient(rgba(30,30,30,.99),#000 1810%)';
+        fsLightboxContainer[0].style.background = 'linear-gradient(rgba(30,30,30,1),#000 1810%)';
         console.log("fslightbox_custom: exec cutom settings")
     }
 }
