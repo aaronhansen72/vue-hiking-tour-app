@@ -1,18 +1,17 @@
 <template>
     <div class="pl-5">
-        <h2>Search</h2>
-        <div>
-            <label>
-                <input type="text"  @focus="searchText = null"  v-model="searchText"
+        <h2 class="mb-3">Suche</h2>
+
+
+        <div id="searchbox" class="pr-6 mb-6">
+           
+                <input type="search" @click="emptyFormField" @focus="searchText = null"  v-model="searchText"
                     placeholder="Suchbegriff eingeben">
-            </label>
-        </div>
-        <div>
-            <!--<a  class="button postfix" ng-click="doSearch()">Go</a>-->
-            <button type="submit" @click="doSearch()" class="button button-search">Go</button>
+                    <button type="submit" @click="doSearch()" class="button button-search">Go</button> 
+           
         </div>
 
-        <p>{{ resultInfo }}</p>
+        <p class="mt-5 mb-6" v-html="resultInfo"></p>
         <div v-for="tour in searchResultList" :key="tour.id">
             <TourListItem :tour="tour" :filteredTourList="tourlist"></TourListItem>
         </div>
@@ -53,7 +52,7 @@ export default {
                     this.resultInfo = this.getResultInfo(this.searchResultList.length);
                 }
             }  else {
-                this.resultInfo = "Bitte suchbegriff eingeben";
+                this.resultInfo = "Bitte Suchbegriff eingeben";
             }
 
         },
@@ -84,8 +83,12 @@ export default {
             if (hits === 1)  {
                 hitsText = "Ergebnis";
             }
-            return hits + " " + hitsText + " für " + this.searchText 
+            return hits + " " + hitsText + " für <b>" + this.searchText + "</b>"
         },
+        emptyFormField()  {
+            this.searchResultList = [];
+            this.resultInfo = "";
+        }
     },
     created()  {
         console.log("created");
@@ -95,3 +98,66 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+
+#searchbox {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.searchkey  {
+ font-size: 3em;
+ color: red;
+}
+
+input[type="search"] {
+  border: none;
+  whitespace: wrap;
+  border-radius: 5px 5px 5px 5px;
+	background: rgba(233, 233, 233, 0.5294117647);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0.35em 0.75em;
+	border: none;
+	font-size: 1.1em;
+	text-decoration: none;
+	line-height: normal;
+	max-height: 3em;
+  
+  flex: 2 0 70%;
+}
+
+input[type="search"]:focus {
+  background: #b1a8a8;
+  color: white;
+  letter-spacing: .1em;
+  transition: background 400ms ease-in-out;
+  outline: none;
+}
+
+button {
+  flex: 1 0 20%;
+  
+  max-height: 3em;
+  font-size: 1.1em;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  border-radius: 0px 5px 5px 0px;
+	background: rgba(153, 51, 0, 0.8196078431);
+  color: white;
+  border: none;
+  padding: 0.35em 0.75em;
+  cursor: pointer;
+
+}
+button:hover {
+  background: #993300;
+}
+
+
+
+</style>
