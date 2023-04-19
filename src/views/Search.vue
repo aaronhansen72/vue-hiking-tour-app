@@ -109,15 +109,14 @@ export default {
 
 input[type="search"] {
     border: none;
-    whitespace: wrap;
-    border-radius: 5px 5px 5px 5px;
+    /*border-radius: 5px 5px 5px 5px;*/
     background: rgba(233, 233, 233, 0.5294117647);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 0.35em 0.75em;
     border: none;
-    font-size: 1.1em;
+    font-size: 1rem;
     text-decoration: none;
     line-height: normal;
     max-height: 3em;
@@ -140,7 +139,7 @@ button {
     font-size: 1.1em;
     letter-spacing: .2em;
     text-transform: uppercase;
-    border-radius: 0px 5px 5px 0px;
+    /*border-radius: 0px 5px 5px 0px;*/
     background: rgba(153, 51, 0, 0.8196078431);
     color: white;
     border: none;

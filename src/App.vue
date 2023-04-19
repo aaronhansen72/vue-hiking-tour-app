@@ -2,7 +2,8 @@
     <div class="header pl-5 mb-6">
       <!-- LOGO -->
       <div id="logo" class="mb-2">
-        <a href="#" class="logo">Bergtouren & Wanderungen</a>
+        <router-link to="/" class="logo">Bergtouren & Wanderungen</router-link>
+        <img src="@/assets/images/bear_and_cat.png" />
       </div>
       <!-- NAVIGATION -->
       <nav>

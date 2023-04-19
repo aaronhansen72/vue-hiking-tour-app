@@ -88,7 +88,8 @@ a.logo:link, a.logo:hover, a.logo:active,  a.logo:visited {
 
 #logo img {
     vertical-align: middle;
-    margin-left: 0.5rem;
+    margin-left: 0.6rem;
+    margin-bottom: 0.3rem;
 }
 
 .main-image, .teaser-image {
@@ -482,8 +483,25 @@ table tr:nth-of-type(odd) {
   }
 
   a.logo:link, a.logo:hover, a.logo:active,  a.logo:visited {
-      font-size:2.0rem;	
+      font-size:2.1rem;	
   }  
+
+ #logo {
+   margin-bottom: 0.8rem;
+ }
+
+ #logo img {
+  margin-left: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+  nav a, .navgotop a {
+    margin-right: 0.85rem;
+    padding: 0.40rem;
+    border: 1px solid #ddd;
+    font-size: 0.85rem;
+    letter-spacing: 0.1ren;
+  }
 
   h1 {
     font-size: 2.2rem;
