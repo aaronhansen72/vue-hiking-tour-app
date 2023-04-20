@@ -1,6 +1,6 @@
 <template>
     <div class="list-item mb-6">
-        <div class="list-item-image mr-6">
+        <div class="list-item-image mr-6 mb-4">
             <a href="#" @click.stop="linkToRoute(tour.id)" id="teaser-01">
                 <img :src="getImagePath(tour.id, tour.hauptbild)" class="teaser-image">
             </a>  
