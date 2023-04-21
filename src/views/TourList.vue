@@ -13,7 +13,7 @@
     @change-start-item-index="startItemIndex = $event">
   </TourListPagination>
   <!-- Ausgabe TourenListe -->
-  <ul class="mr-5 pl-5 pt-5 pb-1">
+  <ul class="mr-1 pl-5 pt-5 pb-1">
       <li v-for="tour in paginatedTourList" :key="tour.id">
           <TourListItem :tour="tour" :filteredTourList="filteredTourList"></TourListItem>
       </li>
