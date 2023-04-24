@@ -1,7 +1,7 @@
 <template>
     <!-- HOME -->
     <!-- Opener -->
-    <template v-for="tour in tourlist.slice(0,1)" :key="tour.id" >
+    <template v-for="tour in tourlist.slice(0,1)" :key="tour.id" >    
         <div class="main-image-stage mt-5" >
             <!-- Frontpage Image linked -->
             <router-link :to="{ name: 'tour-page',params: { id: tour.id }}">
@@ -56,7 +56,6 @@ export default {
         }
     },
     created() {
-        console.log("HOME CREATED = ");
         this.storeTours.fetchTourlist().then(() => {
             this.tourlist = this.storeTours.tourlistData;
         })
