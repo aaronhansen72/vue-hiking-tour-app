@@ -4,7 +4,7 @@
         <!-- Search Field -->
         <div id="searchbox" class="pr-6 mb-6">
             <input type="search" @click="emptyFormField" @focus="searchText = null" v-model="searchText"
-                placeholder="Suchbegriff eingeben"  @keyup.enter="doSearch()">
+                placeholder="Suchbegriff eingeben"  @keyup.enter="x = 1">
             <button type="submit" @click="doSearch()" class="button button-search">Go</button>
         </div>
         <!-- Search Result -->
