@@ -20,6 +20,11 @@ npm run build
 npm run lint
 ```
 
+### Deployment auf Production Server (IONOS)
+```
+./deploy.sh
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
