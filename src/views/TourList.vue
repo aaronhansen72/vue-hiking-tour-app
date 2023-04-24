@@ -34,7 +34,7 @@ export default {
     TourListPagination,
     TourListItem
   },
-  inject: ['baseUrl'],
+  inject: ['baseUrl','contentBaseUrl'],
   setup() {
         const storeTours = useToursStore();
         return {

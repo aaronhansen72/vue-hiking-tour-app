@@ -55,7 +55,7 @@ export default {
             return tourArray.reverse();
         }
     },
-    created() {
+    created() { 
         this.storeTours.fetchTourlist().then(() => {
             this.tourlist = this.storeTours.tourlistData;
         })

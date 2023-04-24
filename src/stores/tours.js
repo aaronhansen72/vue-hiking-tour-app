@@ -38,7 +38,7 @@ export const useToursStore = defineStore({
             } catch (error) {
                 console.log(error);
             }
-          },  
+          },    
         updateFirstPageItem(index) {
             this.firstPageItem = index;
         },

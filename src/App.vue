@@ -57,7 +57,7 @@ export default {
     }
   },
   created() {
-    console.log("APP CREATED");    
+    console.log("APP CREATED"); 
   }
 }
 </script> 
