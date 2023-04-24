@@ -1,5 +1,5 @@
 <template>
-     <div class="pl-5 pr-5 mt-6 mb-5">
+     <div class="pl-5 pr-5 mt-6 mb-3">
     <div>
         <ul class="hnx-tabnav">
             <li class="tab" v-bind:class="{'active': activeDropdownPrev === -1}"><a href="#" @click="filterTourlist(tourlist, '', '')">Gesamt</a>
