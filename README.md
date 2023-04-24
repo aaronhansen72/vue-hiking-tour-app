@@ -28,6 +28,24 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+## Vue Router 404 in Live-Umgebung and How-to-fix it
+
+* Problem Live-Server-Deployment und Vue Router (Web History-Mode): "...without a proper server configuration, the users will get a 404 error if they access https://example.com/user/id directly in their browser."
+* Deswegen muss beim Deploy auf Hosting Server (IONOS) in den Root eine .htaccess
+mit folgendem Inhalt
+```shell
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+```
+* Details siehe [Stackoverflow Issue](https://stackoverflow.com/questions/48752650/deploying-vue-js-app-and-getting-404-error-in-routes)
+
+
 
 # Github: Troubleshooting ssh / PubKey
 
