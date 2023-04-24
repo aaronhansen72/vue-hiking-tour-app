@@ -17,7 +17,7 @@ export const useToursStore = defineStore({
         nextButton: true,
         latestTours: [],
         routeOrigin: "",
-        baseUrl: "http://wandern.cube-online.de/",
+        baseUrl: "http://wandern.hanx.de/",
         tourFilterValue: "",
         activeDropdownPrev: -1,
     }),
