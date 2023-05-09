@@ -28,6 +28,23 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+## Vue Technology Stack dieser App
+
+Es kommen verschiedene Features, Plugins und Techniken zum Einsatz:
+* Pinia (Pagination-States, Tourlist-States)
+  * setup mit Option-API
+* Axios (für AJAX-API ZUgriff auf Daten data.json)
+* Vue Router
+* Provide / Inject
+* Watcher
+* (Composbales): entfernt zugunsten von Pinia
+
+## App im Detail
+
+* [Flow-Chart der App mit allen Components]
+
+
+
 ## Vue Router 404 in Live-Umgebung and How-to-fix it
 
 * Problem Live-Server-Deployment und Vue Router (Web History-Mode): "...without a proper server configuration, the users will get a 404 error if they access https://example.com/user/id directly in their browser."
