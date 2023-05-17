@@ -64,7 +64,7 @@ mit folgendem Inhalt
 
 
 
-# Github: Troubleshooting ssh / PubKey
+## Github: Troubleshooting ssh / PubKey
 
 * Trotz mit dem Account verknüpften Public-Key, gibt's ein Permission denied bei `git push origin master`
 
@@ -93,3 +93,7 @@ Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 ````
+## Todos / Next Steps / Open Stuff
+
+* Giving static filenames for build files in vue-cli3: https://stackoverflow.com/questions/57289857/giving-static-filenames-for-build-files-in-vue-cli3
+
