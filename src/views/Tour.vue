@@ -2,11 +2,15 @@
     <article>
     <!-- Page Navigation -->
     <div class="pagenav font-bigger pl-5 pr-5 mb-5">
-        <div v-if="showButtonPrevPage" class="col col-right-big">
-            <a href="#" @click.stop="linkToRoute(previousPage)">&lt;&lt;</a>
+        <div class="col col-right-big">
+            <template v-if="showButtonPrevPage">
+                <a href="#" @click.stop="linkToRoute(previousPage)">&lt;&lt;</a>
+            </template>
         </div>
-        <div v-if="showButtonNextPage" class="col col-left-big">
-            <a href="#" @click.stop="linkToRoute(nextPage)">&gt;&gt;</a>
+        <div class="col col-left-big">
+            <template v-if="showButtonNextPage">
+                <a href="#" @click.stop="linkToRoute(nextPage)">&gt;&gt;</a>
+            </template>
         </div>
     </div>
     <!-- Tour Data Summary -->
