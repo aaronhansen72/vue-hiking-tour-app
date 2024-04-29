@@ -180,7 +180,7 @@ Home Page
     font-size: 1.60rem;
     font-weight: normal;
     line-height: 1.8rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
   }
 
   .list-item-text .subheadline {
@@ -292,9 +292,12 @@ Detail-Page
 */ 
 
 .article-main p {
-    font-size: 1.025rem;
-    line-height: 1.7rem;
-    margin-bottom: $spacing-3;
+    //font-size: 1.025rem;
+    font-size: 1.04rem;
+    //line-height: 1.7rem;
+    line-height: 1.8rem;
+    // margin-bottom: $spacing-3;
+    margin-bottom: $spacing-5;
 }
 
 

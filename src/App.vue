@@ -1,7 +1,7 @@
 <template>
   <div class="header pl-5 mb-6">
     <!-- LOGO -->
-    <div id="logo" class="mb-2">
+    <div id="logo" class="mb-3">
       <router-link to="/" class="logo">Bergtouren & Wanderungen</router-link>
       <img src="@/assets/images/bear_and_cat.png" />
     </div>

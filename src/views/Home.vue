@@ -1,25 +1,26 @@
 <template>
     <!-- HOME -->
     <!-- Opener -->
-    <template v-for="tour in tourlist.slice(0,1)" :key="tour.id" >    
-        <div class="main-image-stage mt-5" >
+    <template v-for="tour in tourlist.slice(0, 1)" :key="tour.id">
+        <div class="main-image-stage mt-5">
             <!-- Frontpage Image linked -->
-            <router-link :to="{ name: 'tour-page',params: { id: tour.id }}">
+            <router-link :to="{ name: 'tour-page', params: { id: tour.id } }">
                 <img :src="getImagePath(tour.id, tour.hauptbild)" class="main-image">
-            </router-link>  
+            </router-link>
             <div class="opener mb-6">
-                <div class="subheadline"><span class="country-region">{{ formatedDate(tour.id) }} | {{ tour.gebiet }}</span></div>
-                <router-link :to="{ name: 'tour-page',params: { id: tour.id }}">
+                <div class="subheadline"><span class="country-region">{{ formatedDate(tour.id) }} | {{ tour.gebiet }}</span>
+                </div>
+                <router-link :to="{ name: 'tour-page', params: { id: tour.id } }">
                     <h1>{{ tour.titel }}</h1>
                 </router-link>
-                <p>{{ tour.untertitel }}</p> 
+                <p>{{ tour.untertitel }}</p>
             </div>
         </div>
     </template>
     <!-- Frühere Touren -->
     <h2 class="ml-5">Frühere Touren</h2>
     <ul class="mr-5 pl-5 pt-5 pb-1">
-        <li v-for="tour in tourlist.slice(1,tourItemsLimit)" :key="tour.id">
+        <li v-for="tour in tourlist.slice(1, tourItemsLimit)" :key="tour.id">
             <TourListItem :tour="tour" :filteredTourList="tourlist"></TourListItem>
         </li>
     </ul>
@@ -53,11 +54,20 @@ export default {
     methods: {
         getLatestTours(tourArray) {
             return tourArray.reverse();
+        },
+        getShowOnHomepageTours(tourArray) {
+            let filteredTours = tourArray.filter((tour) => {
+                return tour.show_on_homepage !== 'nein';
+            });
+            return filteredTours;
         }
     },
-    created() { 
+    created() {
         this.storeTours.fetchTourlist().then(() => {
             this.tourlist = this.storeTours.tourlistData;
+            console.log("NEW: getShowOnHomepageTours");
+            this.tourlist = this.getShowOnHomepageTours(this.tourlist);
+            console.log("cretead")
         })
 
     }

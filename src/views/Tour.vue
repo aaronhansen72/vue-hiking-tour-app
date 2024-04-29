@@ -24,7 +24,7 @@
         <!-- Main Image -->
         <div class="main-image-stage">
             <a href="#image_gallery" >
-                <img :src="getImagePath(tour.id, tour.hauptbild)" class="main-image">
+                <img :src="getImagePath(tour.id, tour.hauptbild)" loading="lazy" class="main-image">
             </a>
         </div>
         <!-- Tour Info -->
@@ -66,7 +66,7 @@
         <div class="gallery mt-5">
             <template v-for="tourImage in tourImages" :key="tourImage.id">
                 <a data-fslightbox="tour-lightbox" :href="tourImage" exitFullscreenOnClose>
-                    <img :src="tourImage" >
+                    <img :src="tourImage" loading="lazy">
                 </a>
             </template>
         </div>
