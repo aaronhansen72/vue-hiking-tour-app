@@ -33,8 +33,8 @@ export default {
   },
   provide() {
     return {
-      baseUrl: 'http://wandern.cube-online.de/',
-      contentBaseUrl: 'http://wandern.hanx.de/',
+      baseUrl: 'https://wandern.hanx.de/',
+      contentBaseUrl: '//wandern.hanx.de/',
       basePathImages: "contents/fotos/",
       formatedDate(id) {
         let formatedDate = ""

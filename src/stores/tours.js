@@ -17,7 +17,7 @@ export const useToursStore = defineStore({
         nextButton: true,
         latestTours: [],
         routeOrigin: "",
-        baseUrl: "http://wandern.hanx.de/",
+        baseUrl: "https://wandern.hanx.de/",
         tourFilterValue: "",
         activeDropdownPrev: -1,
     }),

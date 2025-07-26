@@ -8,7 +8,7 @@ export default function useFetcher(){
     const data = ref(null);
 
     async function fetchData() {
-        let baseUrl = "http://wandern.cube-online.de/";
+        let baseUrl = "https://wandern.xxxx.cube-online.de/";
         if (process.env.NODE_ENV === "development") {
           baseUrl = "http://localhost:8080/"
         } 
